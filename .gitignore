@@ -17,7 +17,11 @@ install_manifest.txt
 !cmake/*.cmake
 models/*
 pc_nsf_hifigan_44.1k_ONNX/
-docs/
+# Ignore docs/ except the CopyVocal format contract, which must stay in sync with the parser.
+# Use `docs/*` rather than `docs/` so Git still traverses docs/ for the `!` exceptions below.
+docs/*
+!docs/copyvocal-bundle-v1.md
+!docs/copyvocal-import.md
 docs/UserGuide.html
 .*/
 # .*/ 会忽略点开头的目录；Actions 工作流必须入库
